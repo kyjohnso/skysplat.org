@@ -31,44 +31,50 @@ Traditional 3D rendering relies on polygonal meshes and complex lighting calcula
 
 At its core, each Gaussian splat is defined by:
 
-$$
+<div class="math-block">
+\[
 G(\mathbf{x}) = \exp\left(-\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu})\right)
-$$
+\]
+</div>
 
 Where:
-- $\boldsymbol{\mu}$ is the 3D position (mean)
-- $\boldsymbol{\Sigma}$ is the 3×3 covariance matrix
-- $\mathbf{x}$ is any point in 3D space
+- <span class="math-inline">\(\boldsymbol{\mu}\)</span> is the 3D position (mean)
+- <span class="math-inline">\(\boldsymbol{\Sigma}\)</span> is the 3×3 covariance matrix
+- <span class="math-inline">\(\mathbf{x}\)</span> is any point in 3D space
 
 ### Covariance Matrix Decomposition
 
-The covariance matrix $\boldsymbol{\Sigma}$ is decomposed into:
+The covariance matrix <span class="math-inline">\(\boldsymbol{\Sigma}\)</span> is decomposed into:
 
-$$
+<div class="math-block">
+\[
 \boldsymbol{\Sigma} = \mathbf{R} \mathbf{S} \mathbf{S}^T \mathbf{R}^T
-$$
+\]
+</div>
 
 Where:
-- $\mathbf{R}$ is a rotation matrix (3×3)
-- $\mathbf{S}$ is a scaling matrix (3×3 diagonal)
+- <span class="math-inline">\(\mathbf{R}\)</span> is a rotation matrix (3×3)
+- <span class="math-inline">\(\mathbf{S}\)</span> is a scaling matrix (3×3 diagonal)
 
 This decomposition allows independent control over:
-- **Position** ($\boldsymbol{\mu}$): Where the Gaussian is located
-- **Rotation** ($\mathbf{R}$): How it's oriented in space
-- **Scale** ($\mathbf{S}$): Its size along each axis
+- **Position** (<span class="math-inline">\(\boldsymbol{\mu}\)</span>): Where the Gaussian is located
+- **Rotation** (<span class="math-inline">\(\mathbf{R}\)</span>): How it's oriented in space
+- **Scale** (<span class="math-inline">\(\mathbf{S}\)</span>): Its size along each axis
 
 ### Spherical Harmonics
 
 Color information is encoded using spherical harmonics (SH), allowing view-dependent appearance:
 
-$$
+<div class="math-block">
+\[
 C(\mathbf{d}) = \sum_{l=0}^{L} \sum_{m=-l}^{l} c_l^m \cdot Y_l^m(\mathbf{d})
-$$
+\]
+</div>
 
 Where:
-- $\mathbf{d}$ is the viewing direction
-- $c_l^m$ are the SH coefficients
-- $Y_l^m$ are the spherical harmonic basis functions
+- <span class="math-inline">\(\mathbf{d}\)</span> is the viewing direction
+- <span class="math-inline">\(c_l^m\)</span> are the SH coefficients
+- <span class="math-inline">\(Y_l^m\)</span> are the spherical harmonic basis functions
 
 ## Rendering Pipeline
 
@@ -76,39 +82,45 @@ Where:
 
 Each 3D Gaussian is projected to screen space using the camera parameters:
 
-$$
+<div class="math-block">
+\[
 \boldsymbol{\Sigma}' = \mathbf{J} \mathbf{W} \boldsymbol{\Sigma} \mathbf{W}^T \mathbf{J}^T
-$$
+\]
+</div>
 
 Where:
-- $\mathbf{J}$ is the Jacobian of the projection
-- $\mathbf{W}$ is the world-to-camera transformation
+- <span class="math-inline">\(\mathbf{J}\)</span> is the Jacobian of the projection
+- <span class="math-inline">\(\mathbf{W}\)</span> is the world-to-camera transformation
 
 ### 2. Alpha Blending
 
 Gaussians are sorted by depth and blended using:
 
-$$
+<div class="math-block">
+\[
 C = \sum_{i=1}^{N} c_i \cdot \alpha_i \cdot \prod_{j=1}^{i-1} (1 - \alpha_j)
-$$
+\]
+</div>
 
 Where:
-- $c_i$ is the color of Gaussian i
-- $\alpha_i$ is its alpha value
+- <span class="math-inline">\(c_i\)</span> is the color of Gaussian i
+- <span class="math-inline">\(\alpha_i\)</span> is its alpha value
 - The product term handles occlusion
 
 ### 3. Optimization
 
 The system is trained end-to-end using gradient descent on:
 
-$$
+<div class="math-block">
+\[
 \mathcal{L} = \mathcal{L}_{\text{color}} + \lambda_{\text{ssim}} \cdot \mathcal{L}_{\text{ssim}}
-$$
+\]
+</div>
 
 Where:
-- $\mathcal{L}_{\text{color}}$ is the L1 color loss
-- $\mathcal{L}_{\text{ssim}}$ is the structural similarity loss
-- $\lambda_{\text{ssim}}$ balances the two terms
+- <span class="math-inline">\(\mathcal{L}_{\text{color}}\)</span> is the L1 color loss
+- <span class="math-inline">\(\mathcal{L}_{\text{ssim}}\)</span> is the structural similarity loss
+- <span class="math-inline">\(\lambda_{\text{ssim}}\)</span> balances the two terms
 
 ## Implementation Considerations
 
