@@ -31,44 +31,44 @@ Traditional 3D rendering relies on polygonal meshes and complex lighting calcula
 
 At its core, each Gaussian splat is defined by:
 
-```
-G(x) = exp(-1/2 * (x - μ)ᵀ Σ⁻¹ (x - μ))
-```
+$$
+G(\mathbf{x}) = \exp\left(-\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu})\right)
+$$
 
 Where:
-- `μ` is the 3D position (mean)
-- `Σ` is the 3×3 covariance matrix
-- `x` is any point in 3D space
+- $\boldsymbol{\mu}$ is the 3D position (mean)
+- $\boldsymbol{\Sigma}$ is the 3×3 covariance matrix
+- $\mathbf{x}$ is any point in 3D space
 
 ### Covariance Matrix Decomposition
 
-The covariance matrix `Σ` is decomposed into:
+The covariance matrix $\boldsymbol{\Sigma}$ is decomposed into:
 
-```
-Σ = R S Sᵀ Rᵀ
-```
+$$
+\boldsymbol{\Sigma} = \mathbf{R} \mathbf{S} \mathbf{S}^T \mathbf{R}^T
+$$
 
 Where:
-- `R` is a rotation matrix (3×3)
-- `S` is a scaling matrix (3×3 diagonal)
+- $\mathbf{R}$ is a rotation matrix (3×3)
+- $\mathbf{S}$ is a scaling matrix (3×3 diagonal)
 
 This decomposition allows independent control over:
-- **Position** (μ): Where the Gaussian is located
-- **Rotation** (R): How it's oriented in space  
-- **Scale** (S): Its size along each axis
+- **Position** ($\boldsymbol{\mu}$): Where the Gaussian is located
+- **Rotation** ($\mathbf{R}$): How it's oriented in space
+- **Scale** ($\mathbf{S}$): Its size along each axis
 
 ### Spherical Harmonics
 
 Color information is encoded using spherical harmonics (SH), allowing view-dependent appearance:
 
-```
-C(d) = Σ(l=0 to L) Σ(m=-l to l) c_l^m * Y_l^m(d)
-```
+$$
+C(\mathbf{d}) = \sum_{l=0}^{L} \sum_{m=-l}^{l} c_l^m \cdot Y_l^m(\mathbf{d})
+$$
 
 Where:
-- `d` is the viewing direction
-- `c_l^m` are the SH coefficients
-- `Y_l^m` are the spherical harmonic basis functions
+- $\mathbf{d}$ is the viewing direction
+- $c_l^m$ are the SH coefficients
+- $Y_l^m$ are the spherical harmonic basis functions
 
 ## Rendering Pipeline
 
@@ -76,39 +76,39 @@ Where:
 
 Each 3D Gaussian is projected to screen space using the camera parameters:
 
-```
-Σ' = J W Σ Wᵀ Jᵀ
-```
+$$
+\boldsymbol{\Sigma}' = \mathbf{J} \mathbf{W} \boldsymbol{\Sigma} \mathbf{W}^T \mathbf{J}^T
+$$
 
 Where:
-- `J` is the Jacobian of the projection
-- `W` is the world-to-camera transformation
+- $\mathbf{J}$ is the Jacobian of the projection
+- $\mathbf{W}$ is the world-to-camera transformation
 
 ### 2. Alpha Blending
 
 Gaussians are sorted by depth and blended using:
 
-```
-C = Σ(i=1 to N) c_i * α_i * Π(j=1 to i-1) (1 - α_j)
-```
+$$
+C = \sum_{i=1}^{N} c_i \cdot \alpha_i \cdot \prod_{j=1}^{i-1} (1 - \alpha_j)
+$$
 
 Where:
-- `c_i` is the color of Gaussian i
-- `α_i` is its alpha value
+- $c_i$ is the color of Gaussian i
+- $\alpha_i$ is its alpha value
 - The product term handles occlusion
 
 ### 3. Optimization
 
 The system is trained end-to-end using gradient descent on:
 
-```
-L = L_color + λ_ssim * L_ssim
-```
+$$
+\mathcal{L} = \mathcal{L}_{\text{color}} + \lambda_{\text{ssim}} \cdot \mathcal{L}_{\text{ssim}}
+$$
 
 Where:
-- `L_color` is the L1 color loss
-- `L_ssim` is the structural similarity loss
-- `λ_ssim` balances the two terms
+- $\mathcal{L}_{\text{color}}$ is the L1 color loss
+- $\mathcal{L}_{\text{ssim}}$ is the structural similarity loss
+- $\lambda_{\text{ssim}}$ balances the two terms
 
 ## Implementation Considerations
 
