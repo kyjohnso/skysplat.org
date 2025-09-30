@@ -20,10 +20,13 @@ SkySplat is more than just a tool - it's a comprehensive ecosystem for working w
 
 Our main focus is the **SkySplat Blender addon**, which brings native 3DGS support directly into Blender. This means you can:
 
-- **Import and visualize** .ply and other 3DGS formats
-- **Edit and manipulate** Gaussian splat data in real-time
-- **Integrate seamlessly** with your existing Blender workflows
-- **Export optimized** 3DGS data for web and real-time applications
+- Load video and extract frames
+- Configure and run COLMAP for Structure from Motion
+- Import and modify the COLMAP point cloud and cameras
+- Export the COLMAP model, and
+- Configure and Run [Brush](https://github.com/ArthurBrussee/brush) 
+
+All from the Blender 3D Viewport.
 
 ## Why 3D Gaussian Splatting?
 
@@ -35,6 +38,10 @@ If you haven't heard of 3D Gaussian Splatting yet, you're in for a treat! This r
 - **Natural handling** of complex lighting and materials
 
 Unlike traditional polygon-based rendering, 3DGS represents scenes as collections of 3D Gaussian functions, enabling unprecedented quality and performance for certain types of content.
+
+## Why Blender
+
+The [Blender](https://blender.org) Community is inclusive, cooperative, open, and innovative and the Blender software provides a universal 3D modeling, animation, simulation, and visualization toolset. Blender geometry nodes, shader nodes, modifiers, and integration with other data sets makes it a wonderful playground in which to experiment with 3DGS.
 
 ## What You'll Find Here
 
