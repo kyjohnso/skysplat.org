@@ -1,6 +1,6 @@
 +++
 title = "Welcome to SkySplat: Bringing 3D Gaussian Splatting to Blender"
-date = 2024-01-20
+date = 2025-05-28
 [taxonomies]
 categories = ["announcement", "blender", "3dgs"]
 tags = ["skysplat", "blender", "gaussian-splatting", "announcement"]
@@ -91,19 +91,19 @@ SkySplat is built on the principles of open source collaboration:
 
 We have exciting plans for the future:
 
-### Short Term (Q1 2024)
+### Short Term (Q2-Q3 2025)
 - Enhanced viewport rendering performance
 - Additional import/export formats
 - Improved user interface and workflows
 - Comprehensive video tutorial series
 
-### Medium Term (Q2-Q3 2024)
+### Medium Term (Q4 2025)
 - Web-based 3DGS viewer and editor
 - Command-line tools for batch processing
 - Integration with other 3D software packages
 - Advanced editing and manipulation tools
 
-### Long Term (Q4 2024 and beyond)
+### Long Term (2026 and beyond)
 - Real-time collaborative editing
 - Cloud-based processing and storage
 - Mobile and VR/AR applications

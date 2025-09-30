@@ -1,6 +1,6 @@
 +++
 title = "Understanding 3D Gaussian Splatting Fundamentals"
-date = 2024-01-15
+date = 2025-09-30
 [taxonomies]
 tags = ["fundamentals", "mathematics", "3dgs", "theory"]
 [extra]
