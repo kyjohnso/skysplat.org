@@ -6,6 +6,9 @@
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ get_url(path='images/skysplat_logo1.png') }}">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
     <link rel="stylesheet" href="{{ get_url(path='css/math.css') }}">
@@ -24,7 +27,10 @@
     <header>
         <nav>
             <div class="nav-container">
-                <a href="{{ get_url(path='/') }}" class="logo">{{ config.title }}</a>
+                <a href="{{ get_url(path='/') }}" class="logo">
+                    <img src="{{ get_url(path='images/skysplat_logo1.png') }}" alt="SkySplat Logo" class="logo-image">
+                    <span class="logo-text">{{ config.title }}</span>
+                </a>
                 <ul class="nav-menu">
                     {% for item in config.extra.menu %}
                     <li><a href="{{ item.url }}">{{ item.name }}</a></li>
