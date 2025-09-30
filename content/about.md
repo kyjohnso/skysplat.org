@@ -5,7 +5,7 @@ description = "About SkySplat and our mission to make 3D Gaussian Splatting acce
 
 # About SkySplat
 
-SkySplat is an open-source initiative dedicated to making **3D Gaussian Splatting** technology accessible to artists, researchers, and developers worldwide. Our mission is to bridge the gap between cutting-edge 3DGS research and practical creative tools.
+SkySplat is an open-source initiative dedicated to making **3D Gaussian Splatting** technology accessible to artists, researchers, and developers worldwide. We started by trying to bring drone based video to 3DGS all within the Blender 3D viewport, and we hope to grow into other areas of 3DGS research. Our core mission is to bridge the gap between cutting-edge 3DGS research and practical creative tools.
 
 ## What is 3D Gaussian Splatting?
 
@@ -14,26 +14,25 @@ SkySplat is an open-source initiative dedicated to making **3D Gaussian Splattin
 - **Real-time performance** with photorealistic quality
 - **Novel view synthesis** from sparse input views
 - **Efficient storage** and streaming capabilities
-- **Seamless integration** with existing 3D pipelines
+- **Advanced physics modeling** with Gaussians as the mathematical primitive
 
 ## Our Projects
 
 ### SkySplat Blender
-Our flagship project is a comprehensive Blender addon that brings 3DGS capabilities directly into the world's most popular open-source 3D software. Features include:
+Our flagship project is a comprehensive Blender addon that brings the end-to-end 3DGS open source workflow directly into the world's most popular open-source 3D software. Features include:
 
-- Native .ply and 3DGS format support
-- Real-time viewport visualization
-- Advanced editing and manipulation tools
-- Seamless workflow integration
+- Loading video and extracting frames
+- Configuring and running COLMAP for Structure from Motion
+- Importing and modifying the COLMAP point cloud and cameras
+- Exporting the COLMAP model, and
+- Configuring and Running [Brush](https://github.com/ArthurBrussee/brush) a popular Rust based 3DGS training and rendering app
 
 [View on GitHub](https://github.com/kyjohnso/skysplat_blender)
 
 ### Future Projects
-We're actively developing additional tools and resources:
-
-- **SkySplat CLI** - Command-line tools for 3DGS processing
-- **SkySplat Web** - Browser-based 3DGS viewer and editor
-- **Research Tools** - Utilities for 3DGS research and experimentation
+We are actively *exploring* (not yet developing necessarily) these future projects to advanced the state of the art - 
+- 3DGS support native to Blender - I gave a [talk about this at bcon25](https://youtu.be/gU8oR7vqfRg?si=5s5JSeQkmGtwRvwE&t=3637) and look forward to exploring this more 
+- SkySplat CLI - I think there is huge potential for a CLI "shell" that provides smart interactions between all of the emerging 3DGS technologies
 
 ## Community
 
@@ -67,6 +66,7 @@ SkySplat builds upon the groundbreaking research in 3D Gaussian Splatting. We're
 Special thanks to:
 - The Blender Foundation for creating an amazing open-source platform
 - The 3DGS research community for their continued innovations
+- Arthur Brussee for his Brush App
 - All contributors and users who help make SkySplat better
 
 ---
