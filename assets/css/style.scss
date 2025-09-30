@@ -1,0 +1,345 @@
+---
+---
+
+@import "minima";
+
+// Custom variables
+$brand-color: #2563eb;
+$brand-color-light: #3b82f6;
+$brand-color-dark: #1d4ed8;
+$accent-color: #10b981;
+$text-color: #374151;
+$background-color: #ffffff;
+$grey-color-light: #f9fafb;
+$grey-color: #6b7280;
+$grey-color-dark: #374151;
+
+// Override default colors
+$brand-color: $brand-color !default;
+$text-color: $text-color !default;
+
+// Custom styles
+.site-header {
+  border-bottom: 2px solid $brand-color;
+  
+  .site-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $brand-color !important;
+    
+    &:hover {
+      text-decoration: none;
+      color: $brand-color-dark !important;
+    }
+  }
+  
+  .site-nav .page-link {
+    color: $text-color;
+    font-weight: 500;
+    
+    &:hover {
+      color: $brand-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Hero section on homepage
+.hero-section {
+  background: linear-gradient(135deg, $brand-color 0%, $brand-color-light 100%);
+  color: white;
+  padding: 4rem 0;
+  margin: -2rem 0 3rem 0;
+  text-align: center;
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+}
+
+// Feature grid
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: $grey-color-light;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    color: $brand-color;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  p {
+    color: $grey-color-dark;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Documentation grid
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.doc-card {
+  background: white;
+  border: 2px solid $grey-color-light;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: border-color 0.2s ease;
+  
+  &:hover {
+    border-color: $brand-color;
+  }
+  
+  h3 {
+    color: $brand-color;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: $text-color;
+        text-decoration: none;
+        
+        &:hover {
+          color: $brand-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Article preview grid
+.article-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.preview-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  
+  h4 {
+    color: $brand-color;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+  
+  p {
+    color: $grey-color;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  
+  &.btn-primary {
+    background-color: $brand-color;
+    color: white;
+    
+    &:hover {
+      background-color: $brand-color-dark;
+      text-decoration: none;
+      color: white;
+    }
+  }
+  
+  &.btn-outline {
+    border-color: $brand-color;
+    color: $brand-color;
+    background-color: transparent;
+    
+    &:hover {
+      background-color: $brand-color;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+// Tags
+.tags {
+  margin: 1rem 0;
+  
+  .tag {
+    display: inline-block;
+    background-color: $grey-color-light;
+    color: $grey-color-dark;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Posts and articles
+.post, .article-item {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  h2 {
+    margin-bottom: 0.5rem;
+    
+    a {
+      color: $text-color;
+      text-decoration: none;
+      
+      &:hover {
+        color: $brand-color;
+      }
+    }
+  }
+}
+
+.post-meta, .article-meta {
+  color: $grey-color;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-excerpt, .article-excerpt {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: $brand-color;
+  text-decoration: none;
+  font-weight: 500;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Coming soon sections
+.coming-soon, .no-posts {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: $grey-color-light;
+  border-radius: 12px;
+  margin: 2rem 0;
+  
+  h3 {
+    color: $brand-color;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    text-align: left;
+    display: inline-block;
+    margin: 1rem 0;
+  }
+}
+
+// Code blocks
+pre, code {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+pre {
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+    margin: -1rem 0 2rem 0;
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .feature-grid, .doc-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-card, .doc-card {
+    padding: 1.5rem;
+  }
+}
+
+// Footer
+.site-footer {
+  background-color: $grey-color-dark;
+  color: white;
+  
+  .footer-heading {
+    color: white;
+  }
+  
+  a {
+    color: #d1d5db;
+    
+    &:hover {
+      color: white;
+    }
+  }
+}

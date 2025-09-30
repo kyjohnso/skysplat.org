@@ -1,0 +1,270 @@
+/* SkySplat.org Custom Styles */
+
+/* Custom variables */
+:root {
+  --brand-color: #2563eb;
+  --brand-color-light: #3b82f6;
+  --brand-color-dark: #1d4ed8;
+  --accent-color: #10b981;
+  --text-color: #374151;
+  --background-color: #ffffff;
+  --grey-color-light: #f9fafb;
+  --grey-color: #6b7280;
+  --grey-color-dark: #374151;
+}
+
+/* Header styles */
+.site-header {
+  border-bottom: 2px solid var(--brand-color);
+}
+
+.site-title {
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  color: var(--brand-color) !important;
+}
+
+.site-title:hover {
+  text-decoration: none !important;
+  color: var(--brand-color-dark) !important;
+}
+
+.site-nav .page-link {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.site-nav .page-link:hover {
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+/* Feature grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: var(--grey-color-light);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: var(--brand-color);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.feature-card p {
+  color: var(--grey-color-dark);
+  margin-bottom: 1.5rem;
+}
+
+/* Documentation grid */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.doc-card {
+  background: white;
+  border: 2px solid var(--grey-color-light);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: border-color 0.2s ease;
+}
+
+.doc-card:hover {
+  border-color: var(--brand-color);
+}
+
+.doc-card h3 {
+  color: var(--brand-color);
+  margin-bottom: 1rem;
+}
+
+.doc-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doc-card li {
+  margin-bottom: 0.5rem;
+}
+
+.doc-card a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.doc-card a:hover {
+  color: var(--brand-color);
+  text-decoration: underline;
+}
+
+/* Article preview grid */
+.article-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.preview-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.preview-card h4 {
+  color: var(--brand-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.preview-card p {
+  color: var(--grey-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--brand-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-color-dark);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-outline {
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-color);
+  color: white;
+  text-decoration: none;
+}
+
+/* Tags */
+.tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--grey-color-light);
+  color: var(--grey-color-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Posts and articles */
+.post, .article-item {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.post:last-child, .article-item:last-child {
+  border-bottom: none;
+}
+
+.post h2, .article-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+.post h2 a, .article-item h2 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.post h2 a:hover, .article-item h2 a:hover {
+  color: var(--brand-color);
+}
+
+.post-meta, .article-meta {
+  color: var(--grey-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-excerpt, .article-excerpt {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: var(--brand-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Coming soon sections */
+.coming-soon, .no-posts {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--grey-color-light);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.coming-soon h3, .no-posts h3 {
+  color: var(--brand-color);
+  margin-bottom: 1rem;
+}
+
+.coming-soon ul, .no-posts ul {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .feature-grid, .doc-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-card, .doc-card {
+    padding: 1.5rem;
+  }
+}

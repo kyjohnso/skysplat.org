@@ -1,0 +1,57 @@
+# Site settings
+title: SkySplat
+email: your-email@example.com
+description: >-
+  A hub for 3D Gaussian Splatting, Blender integration, and cutting-edge 3DGS research.
+  Explore tools, tutorials, and insights for working with 3D Gaussian Splatting in Blender.
+baseurl: ""
+url: "https://skysplat.org"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Disable SASS processing temporarily
+sass:
+  style: expanded
+  sourcemap: never
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+  articles:
+    output: true
+    permalink: /:collection/:name/
+
+# Navigation
+header_pages:
+  - index.md
+  - blog.md
+  - docs.md
+  - articles.md
+  - about.md
+
+# Social links
+github_username: kyjohnso
+twitter_username: # your twitter username
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

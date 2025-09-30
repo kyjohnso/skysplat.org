@@ -1,0 +1,57 @@
+# Zola configuration file for SkySplat.org
+
+base_url = "https://skysplat.org"
+title = "SkySplat"
+description = "A hub for 3D Gaussian Splatting, Blender integration, and cutting-edge 3DGS research. Explore tools, tutorials, and insights for working with 3D Gaussian Splatting in Blender."
+default_language = "en"
+
+
+# Compile Sass files
+compile_sass = true
+
+# Build search index for search functionality
+build_search_index = true
+
+# Generate RSS feed (disabled for now)
+generate_feeds = false
+
+# Taxonomies (categories and tags)
+taxonomies = [
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
+[markdown]
+# Enable syntax highlighting
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+
+# Enable smart punctuation
+smart_punctuation = true
+
+[extra]
+# Custom variables
+author = "SkySplat Team"
+github_username = "kyjohnso"
+email = "your-email@example.com"
+
+# Navigation menu
+[[extra.menu]]
+name = "Home"
+url = "/"
+
+[[extra.menu]]
+name = "Blog"
+url = "/blog/"
+
+[[extra.menu]]
+name = "Docs"
+url = "/docs/"
+
+[[extra.menu]]
+name = "Articles"
+url = "/articles/"
+
+[[extra.menu]]
+name = "About"
+url = "/about/"

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='feed.xml', trailing_slash=false) }}">
+    
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="{{ get_url(path='/') }}" class="logo">{{ config.title }}</a>
+                <ul class="nav-menu">
+                    {% for item in config.extra.menu %}
+                    <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}. Open source project.</p>
+            <p>
+                {% if config.extra.github_username %}
+                <a href="https://github.com/{{ config.extra.github_username }}">GitHub</a>
+                {% endif %}
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
