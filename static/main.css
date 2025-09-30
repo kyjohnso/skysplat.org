@@ -87,6 +87,20 @@ header {
   color: var(--brand-color);
 }
 
+.github-link {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.github-link svg {
+  transition: transform 0.2s;
+}
+
+.github-link:hover svg {
+  transform: scale(1.1);
+}
+
 /* Main content */
 main {
   max-width: 1200px;
@@ -315,6 +329,16 @@ footer {
 
 .footer-container a:hover {
   text-decoration: underline;
+}
+
+.github-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.github-footer-link svg {
+  vertical-align: middle;
 }
 
 /* Responsive design */

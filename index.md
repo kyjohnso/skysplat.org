@@ -12,9 +12,8 @@ Your hub for **3D Gaussian Splatting** in Blender and beyond. Explore cutting-ed
 ### 🎨 SkySplat Blender
 A powerful Blender addon for working with 3D Gaussian Splatting data directly in your favorite 3D software.
 
-- **Import & Export**: Seamlessly work with .ply and other 3DGS formats
-- **Real-time Visualization**: Preview your gaussian splats in Blender's viewport
-- **Advanced Tools**: Edit, manipulate, and optimize your 3DGS data
+- Brings open source tools into the Blender UI
+- Allows for scaling and rotating of COLMAP models
 
 [View on GitHub](https://github.com/kyjohnso/skysplat_blender){: .btn .btn-primary}
 [Documentation](/docs/skysplat-blender/){: .btn .btn-outline}
