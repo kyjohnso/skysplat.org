@@ -15,146 +15,124 @@ SkySplat.org serves as the central hub for the SkySplat ecosystem, featuring:
 
 ### Prerequisites
 
-- Ruby 2.7 or higher
-- Bundler gem
+- [Zola](https://www.getzola.org/) 0.17.0 or higher
 - Git
 
 ### Local Development
 
-#### Option 1: Using the Setup Script (Recommended)
-
 1. **Clone the repository**
    ```bash
    git clone https://github.com/kyjohnso/skysplat.org.git
    cd skysplat.org
    ```
 
-2. **Run the setup script**
-   ```bash
-   ./setup.sh
-   ```
+2. **Install Zola**
+   
+   Follow the [Zola installation guide](https://www.getzola.org/documentation/getting-started/installation/) for your platform:
+   
+   - **macOS**: `brew install zola`
+   - **Linux**: Download from [releases](https://github.com/getzola/zola/releases)
+   - **Windows**: `choco install zola` or `scoop install zola`
 
 3. **Start the development server**
    ```bash
-   bundle exec jekyll serve
+   zola serve
    ```
 
 4. **View the site**
-   Open your browser to `http://localhost:4000`
-
-#### Option 2: Using Docker (No Ruby Installation Required)
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kyjohnso/skysplat.org.git
-   cd skysplat.org
-   ```
-
-2. **Start with Docker Compose**
-   ```bash
-   docker-compose up
-   ```
-
-3. **View the site**
-   Open your browser to `http://localhost:4000`
-
-#### Option 3: Manual Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kyjohnso/skysplat.org.git
-   cd skysplat.org
-   ```
-
-2. **Configure Bundler for local installation**
-   ```bash
-   bundle config set --local path 'vendor/bundle'
-   bundle install
-   ```
-
-3. **Run the development server**
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-4. **View the site**
-   Open your browser to `http://localhost:4000`
+   Open your browser to `http://127.0.0.1:1111`
 
 ### Building for Production
 
 ```bash
-bundle exec jekyll build
+zola build
 ```
 
-The built site will be in the `_site` directory.
+The built site will be in the `public` directory.
 
 ## Site Structure
 
 ```
-├── _config.yml          # Jekyll configuration
-├── _posts/              # Blog posts
-├── _docs/               # Documentation pages
-├── _articles/           # Technical articles
-├── _layouts/            # Page layouts (if custom)
-├── _includes/           # Reusable components (if custom)
-├── assets/              # CSS, JS, images
-│   └── css/
-│       └── style.scss   # Custom styles
-├── index.md             # Homepage
-├── blog.md              # Blog listing page
-├── docs.md              # Documentation index
-├── articles.md          # Articles index
-└── about.md             # About page
+├── config.toml          # Zola configuration
+├── content/             # All content files
+│   ├── _index.md        # Homepage
+│   ├── about.md         # About page
+│   ├── blog/            # Blog posts
+│   │   ├── _index.md
+│   │   └── *.md
+│   ├── docs/            # Documentation pages
+│   │   ├── _index.md
+│   │   └── *.md
+│   └── articles/        # Technical articles
+│       ├── _index.md
+│       └── *.md
+├── templates/           # HTML templates
+│   ├── base.html
+│   ├── index.html
+│   ├── blog.html
+│   ├── blog-page.html
+│   ├── docs.html
+│   ├── docs-page.html
+│   ├── articles.html
+│   └── article-page.html
+├── static/              # Static assets (CSS, JS, images)
+│   ├── css/
+│   ├── images/
+│   └── CNAME
+└── sass/                # Sass stylesheets (if used)
 ```
 
 ## Content Management
 
 ### Adding Blog Posts
 
-Create a new file in `_posts/` with the format `YYYY-MM-DD-title.md`:
+Create a new file in `content/blog/` with the format `YYYY-MM-DD-title.md`:
 
 ```markdown
----
-layout: post
-title: "Your Post Title"
-date: 2024-01-20 10:00:00 +0000
-categories: [category1, category2]
-tags: [tag1, tag2]
-author: "Author Name"
-excerpt: "Brief description of the post"
----
++++
+title = "Your Post Title"
+date = 2024-01-20
+[taxonomies]
+categories = ["category1", "category2"]
+tags = ["tag1", "tag2"]
+[extra]
+author = "Author Name"
++++
 
 Your content here...
 ```
 
 ### Adding Documentation
 
-Create a new file in `_docs/` with appropriate front matter:
+Create a new file in `content/docs/` with appropriate front matter:
 
 ```markdown
----
-title: "Documentation Title"
-description: "Brief description"
-tags: ["tag1", "tag2"]
-order: 1
----
++++
+title = "Documentation Title"
+description = "Brief description"
+[taxonomies]
+tags = ["tag1", "tag2"]
+[extra]
+order = 1
++++
 
 Your documentation content...
 ```
 
 ### Adding Articles
 
-Create a new file in `_articles/` with front matter:
+Create a new file in `content/articles/` with front matter:
 
 ```markdown
----
-title: "Article Title"
-date: 2024-01-20
-author: "Author Name"
-tags: ["tag1", "tag2"]
-excerpt: "Brief description"
-read_time: 10
----
++++
+title = "Article Title"
+date = 2024-01-20
+[taxonomies]
+tags = ["tag1", "tag2"]
+[extra]
+author = "Author Name"
+read_time = 10
++++
 
 Your article content...
 ```
@@ -163,7 +141,7 @@ Your article content...
 
 ### Styling
 
-The site uses a custom theme based on Minima. Modify `assets/css/style.scss` to customize:
+The site uses custom CSS located in `static/css/`. Modify these files to customize:
 
 - Colors and branding
 - Layout and spacing
@@ -172,31 +150,51 @@ The site uses a custom theme based on Minima. Modify `assets/css/style.scss` to 
 
 ### Configuration
 
-Edit `_config.yml` to modify:
+Edit `config.toml` to modify:
 
 - Site metadata
+- Base URL
 - Navigation menu
-- Plugin settings
+- Taxonomies (tags, categories)
 - Build options
 
 ## Deployment
 
 ### GitHub Pages
 
-This site is configured to work with GitHub Pages. Simply push to the `main` branch and GitHub will automatically build and deploy the site.
+This site can be deployed to GitHub Pages using GitHub Actions. The workflow will automatically build and deploy when you push to the `main` branch.
 
-### Manual Deployment
+Example GitHub Actions workflow (`.github/workflows/deploy.yml`):
 
-1. Build the site: `bundle exec jekyll build`
-2. Upload the `_site` directory to your web server
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shalzz/zola-deploy-action@v0.17.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ### Netlify/Vercel
 
 The site works with modern static site hosts. Use these build settings:
 
-- **Build command**: `bundle exec jekyll build`
-- **Publish directory**: `_site`
-- **Ruby version**: 2.7 or higher
+- **Build command**: `zola build`
+- **Publish directory**: `public`
+- **Zola version**: 0.17.0 or higher
+
+### Manual Deployment
+
+1. Build the site: `zola build`
+2. Upload the `public` directory to your web server
 
 ## Contributing
 
@@ -218,7 +216,7 @@ We welcome contributions to improve the website! Here's how you can help:
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Make your changes and test locally
+3. Make your changes and test locally with `zola serve`
 4. Commit with clear messages: `git commit -m "Add: new feature description"`
 5. Push to your fork: `git push origin feature/your-feature`
 6. Create a Pull Request
@@ -256,11 +254,11 @@ We welcome contributions to improve the website! Here's how you can help:
 
 This website content is licensed under [CC0 1.0 Universal](LICENSE) - you can freely use, modify, and distribute the content.
 
-The Jekyll theme and code are available under the MIT License.
+The site code and templates are available under the MIT License.
 
 ## Acknowledgments
 
-- Built with [Jekyll](https://jekyllrb.com/) and [Minima theme](https://github.com/jekyll/minima)
+- Built with [Zola](https://www.getzola.org/) - A fast static site generator
 - Hosted on [GitHub Pages](https://pages.github.com/)
 - Thanks to all contributors and the 3DGS research community
 
