@@ -7,17 +7,21 @@
   box-sizing: border-box;
 }
 
-/* Custom variables */
+/* Custom variables - SkySplat Logo Color Palette */
 :root {
-  --brand-color: #2563eb;
-  --brand-color-light: #3b82f6;
-  --brand-color-dark: #1d4ed8;
-  --accent-color: #10b981;
-  --text-color: #374151;
-  --background-color: #ffffff;
+  --brand-color: #f47920;
+  --brand-color-light: #ff9a4d;
+  --brand-color-dark: #e56a0a;
+  --accent-color: #ec407a;
+  --secondary-color: #9c27b0;
+  --tertiary-color: #2196f3;
+  --navy-color: #1a3a52;
+  --coral-color: #e57373;
+  --text-color: #1a3a52;
+  --background-color: #f5f5f0;
   --grey-color-light: #f9fafb;
   --grey-color: #6b7280;
-  --grey-color-dark: #374151;
+  --grey-color-dark: #1a3a52;
 }
 
 body {
