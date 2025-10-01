@@ -30,7 +30,24 @@ description = "Your hub for 3D Gaussian Splatting in Blender and beyond"
   </div>
 </div>
 
-## 🎨 SkySplat Blender Addon
+## 🎬 BlenderCon 2025 Talk
+
+Watch the full presentation from BlenderCon 2025 where we showcase SkySplat's capabilities and demonstrate real-world workflows for 3D Gaussian Splatting in Blender.
+
+<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/Q5FISs0gkiE"
+    title="SkySplat at BlenderCon 2025"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+
+## � SkySplat Blender Addon
 
 A comprehensive Blender addon for end-to-end 3D Gaussian Splatting workflows. Process drone footage, aerial photography, and ground-based captures into stunning 3DGS models.
 
