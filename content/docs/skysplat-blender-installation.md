@@ -10,6 +10,19 @@ This guide will walk you through installing the SkySplat Blender addon and all r
 
 <!-- more -->
 
+<div class="cta-box">
+  <h3>⭐ Support the Project</h3>
+  <p>If you find SkySplat useful, please star the repository on GitHub! It helps others discover the project.</p>
+  <a href="https://github.com/kyjohnso/skysplat_blender" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+    ⭐ Star on GitHub
+  </a>
+  <div style="margin-top: 1rem;">
+    <a href="https://github.com/kyjohnso/skysplat_blender/stargazers" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/github/stars/kyjohnso/skysplat_blender?style=social" alt="GitHub stars">
+    </a>
+  </div>
+</div>
+
 ## Requirements
 
 - Blender 4.0.0 or newer
