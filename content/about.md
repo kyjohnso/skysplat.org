@@ -1,31 +1,34 @@
 +++
-title = "About"
-description = "About SkySplat and our mission to make 3D Gaussian Splatting accessible"
+title = "About SkySplat - 3D Gaussian Splatting for Blender & Drone Photogrammetry"
+description = "Learn about SkySplat's mission to make 3D Gaussian Splatting (3DGS) accessible through Blender integration. Open-source tools for drone photogrammetry, COLMAP, and neural rendering."
 +++
 
-# About SkySplat
+# About SkySplat: 3D Gaussian Splatting for Blender
 
-SkySplat is an open-source initiative dedicated to making **3D Gaussian Splatting** technology accessible to artists, researchers, and developers worldwide. We started by trying to bring drone based video to 3DGS all within the Blender 3D viewport, and we hope to grow into other areas of 3DGS research. Our core mission is to bridge the gap between cutting-edge 3DGS research and practical creative tools.
+SkySplat is an open-source initiative dedicated to making **3D Gaussian Splatting (3DGS)** technology accessible to artists, researchers, and developers worldwide. We started with a vision: bring drone-based video and aerial photogrammetry to 3DGS entirely within the Blender 3D viewport. Our core mission is to bridge the gap between cutting-edge Gaussian splatting research and practical creative tools for Blender users.
 
-## What is 3D Gaussian Splatting?
+## What is 3D Gaussian Splatting (3DGS)?
 
-3D Gaussian Splatting (3DGS) is a revolutionary technique for real-time rendering of photorealistic 3D scenes. Unlike traditional polygon-based rendering, 3DGS represents scenes as collections of 3D Gaussian functions, enabling:
+3D Gaussian Splatting (3DGS) is a revolutionary neural rendering technique for real-time photorealistic 3D scene reconstruction. Unlike traditional polygon mesh rendering or NeRF (Neural Radiance Fields), 3DGS represents scenes as collections of 3D Gaussian primitives, enabling:
 
-- **Real-time performance** with photorealistic quality
-- **Novel view synthesis** from sparse input views
-- **Efficient storage** and streaming capabilities
-- **Advanced physics modeling** with Gaussians as the mathematical primitive
+- **Real-time Rendering**: Photorealistic quality at 60+ FPS
+- **Novel View Synthesis**: Generate new camera perspectives from sparse drone footage or photos
+- **Efficient Workflow**: Seamless integration with COLMAP structure-from-motion
+- **Blender Native**: Work directly in Blender's familiar 3D viewport
+- **Drone Photogrammetry**: Ideal for processing aerial and ground-based captures
+- **Compact Storage**: Efficient representation for streaming and distribution
 
 ## Our Projects
 
-### SkySplat Blender
-Our flagship project is a comprehensive Blender addon that brings the end-to-end 3DGS open source workflow directly into the world's most popular open-source 3D software. Features include:
+### SkySplat Blender Addon
+Our flagship project is a comprehensive Blender addon that brings the complete 3D Gaussian Splatting workflow into Blender. Perfect for drone operators, 3D artists, and researchers working with photogrammetry and neural rendering. Features include:
 
-- Loading video and extracting frames
-- Configuring and running COLMAP for Structure from Motion
-- Importing and modifying the COLMAP point cloud and cameras
-- Exporting the COLMAP model, and
-- Configuring and Running [Brush](https://github.com/ArthurBrussee/brush) a popular Rust based 3DGS training and rendering app
+- **Video Processing**: Load drone footage and extract frames for 3DGS training
+- **COLMAP Integration**: Configure and run structure-from-motion directly in Blender
+- **Point Cloud Editing**: Import, scale, rotate, and transform COLMAP reconstructions
+- **Camera Management**: Visualize and adjust camera positions from photogrammetry
+- **Brush Training**: Configure and run [Brush](https://github.com/ArthurBrussee/brush), a high-performance Rust-based 3DGS training engine
+- **Real-time Preview**: View Gaussian splatting results in Blender's viewport
 
 [View on GitHub](https://github.com/kyjohnso/skysplat_blender)
 

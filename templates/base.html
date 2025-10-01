@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <title>{% block title %}{{ config.title }} - 3D Gaussian Splatting for Blender{% endblock title %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="{% block keywords %}3D Gaussian Splatting, 3DGS, Gaussian Splatting, Blender, SkySplat, drone photogrammetry, COLMAP, Brush, 3D reconstruction, neural rendering, novel view synthesis, photogrammetry, point cloud, structure from motion{% endblock keywords %}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{% block canonical %}{{ current_url | default(value=config.base_url) }}{% endblock canonical %}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}">
+    <meta property="og:url" content="{% block og_url %}{{ current_url | default(value=config.base_url) }}{% endblock og_url %}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }} - 3D Gaussian Splatting for Blender{% endblock og_title %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
+    <meta property="og:image" content="{% block og_image %}{{ get_url(path='images/skysplat_logo1.png') | safe }}{% endblock og_image %}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ config.title }}",
+      "url": "{{ config.base_url }}",
+      "description": "{{ config.description }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ config.extra.author }}"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ config.base_url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    {% block structured_data %}{% endblock structured_data %}
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{% block twitter_url %}{{ current_url | default(value=config.base_url) }}{% endblock twitter_url %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} - 3D Gaussian Splatting for Blender{% endblock twitter_title %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ get_url(path='images/skysplat_logo1.png') | safe }}{% endblock twitter_image %}">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ get_url(path='images/skysplat_logo1.png') }}">

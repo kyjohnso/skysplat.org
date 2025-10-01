@@ -1,19 +1,24 @@
 ---
 layout: home
-title: SkySplat
+title: SkySplat - 3D Gaussian Splatting for Blender | Drone Photogrammetry & 3DGS Tools
+description: Professional 3D Gaussian Splatting (3DGS) tools for Blender. Create photorealistic 3D scenes from drone footage using COLMAP, Brush, and cutting-edge Gaussian splatting technology.
 ---
 
-# Welcome to SkySplat
+# SkySplat: 3D Gaussian Splatting for Blender
 
-Your hub for **3D Gaussian Splatting** in Blender and beyond. Explore cutting-edge tools, tutorials, and research for working with 3DGS technology.
+Your complete hub for **3D Gaussian Splatting (3DGS)** in Blender. Transform drone footage and photos into photorealistic 3D scenes using cutting-edge Gaussian splatting technology, COLMAP structure-from-motion, and the Brush rendering engine.
 
 ## Featured Projects
 
-### 🎨 SkySplat Blender
-A powerful Blender addon for working with 3D Gaussian Splatting data directly in your favorite 3D software.
+### 🎨 SkySplat Blender Addon
+A comprehensive Blender addon for end-to-end 3D Gaussian Splatting workflows. Process drone footage, aerial photography, and ground-based captures into stunning 3DGS models.
 
-- Brings open source tools into the Blender UI
-- Allows for scaling and rotating of COLMAP models
+**Key Features:**
+- **Video Processing**: Extract frames from drone footage and video files
+- **COLMAP Integration**: Run structure-from-motion directly in Blender
+- **Point Cloud Editing**: Scale, rotate, and transform COLMAP reconstructions
+- **Brush Training**: Configure and train 3D Gaussian Splatting models
+- **Real-time Preview**: Visualize 3DGS results in Blender's viewport
 
 [View on GitHub](https://github.com/kyjohnso/skysplat_blender){: .btn .btn-primary}
 [Documentation](/docs/skysplat-blender/){: .btn .btn-outline}
@@ -40,22 +45,31 @@ A powerful Blender addon for working with 3D Gaussian Splatting data directly in
   </div>
 </div>
 
-## About 3D Gaussian Splatting
+## What is 3D Gaussian Splatting (3DGS)?
 
-3D Gaussian Splatting is a revolutionary technique for real-time rendering of photorealistic 3D scenes. Unlike traditional mesh-based approaches, 3DGS represents scenes as collections of 3D Gaussian functions, enabling:
+3D Gaussian Splatting is a revolutionary neural rendering technique for creating photorealistic 3D scenes in real-time. Unlike traditional polygon mesh rendering or NeRF (Neural Radiance Fields), 3DGS represents scenes as collections of 3D Gaussian primitives, enabling:
 
-- **Ultra-fast rendering** with real-time performance
-- **Photorealistic quality** from novel viewpoints  
-- **Efficient storage** and transmission
-- **Easy integration** with existing 3D pipelines
+- **Real-time Rendering**: Achieve 60+ FPS with photorealistic quality
+- **Novel View Synthesis**: Generate new camera angles from sparse input views
+- **Drone-Friendly**: Perfect for aerial photogrammetry and drone mapping
+- **Blender Integration**: Seamless workflow with industry-standard 3D software
+- **Efficient Storage**: Compact representation compared to traditional meshes
+- **COLMAP Compatible**: Works with standard structure-from-motion pipelines
 
-## Getting Started
+## Getting Started with 3DGS in Blender
 
-1. **Explore the Blog** - Start with our latest posts about 3DGS techniques
-2. **Check the Documentation** - Learn how to use SkySplat Blender addon
-3. **Read Technical Articles** - Dive deep into implementation details
-4. **Join the Community** - Contribute to our open-source projects
+1. **Install SkySplat Blender** - Download the addon and set up your environment
+2. **Process Drone Footage** - Import video, extract frames, and run COLMAP
+3. **Train 3DGS Models** - Use Brush to create Gaussian splatting representations
+4. **Explore Tutorials** - Learn advanced techniques and workflows
+5. **Join the Community** - Share your work and get support
+
+### Perfect For:
+- **Drone Operators**: Convert aerial footage into 3D models
+- **3D Artists**: Create photorealistic environments in Blender
+- **Researchers**: Experiment with Gaussian splatting technology
+- **Photographers**: Transform photo sets into interactive 3D scenes
 
 ---
 
-*SkySplat is an open-source project dedicated to making 3D Gaussian Splatting accessible to artists, researchers, and developers worldwide.*
+*SkySplat is an open-source project making 3D Gaussian Splatting accessible to artists, researchers, and developers worldwide. Free forever.*

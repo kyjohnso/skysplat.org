@@ -2,9 +2,8 @@
 
 base_url = "https://skysplat.org"
 title = "SkySplat"
-description = "A hub for 3D Gaussian Splatting, Blender integration, and cutting-edge 3DGS research. Explore tools, tutorials, and insights for working with 3D Gaussian Splatting in Blender."
+description = "Professional 3D Gaussian Splatting (3DGS) tools for Blender. Transform drone footage into photorealistic 3D scenes using COLMAP, Brush, and cutting-edge Gaussian splatting technology."
 default_language = "en"
-
 
 # Compile Sass files
 compile_sass = true
@@ -12,8 +11,9 @@ compile_sass = true
 # Build search index for search functionality
 build_search_index = true
 
-# Generate RSS feed (disabled for now)
-generate_feeds = false
+# Generate RSS feed and sitemap for SEO
+generate_feeds = true
+feed_limit = 20
 
 # Taxonomies (categories and tags)
 taxonomies = [
